@@ -1,6 +1,6 @@
 # Spotlight
 
-A Neovim plugin to highlight the current identifier under the cursor.
+A Neovim plugin to highlight the current identifier under the cursor and scope.
 
 ## Installation
 
