@@ -11,7 +11,7 @@ M.run = function()
     if not def then return end
     local usages = locals.find_usages(def, scope, 0)
     for _, n in ipairs(usages) do
-        ts_utils.highlight_node(n, 0, namespace, "TermCursor")
+      if n ~= node then ts_utils.highlight_node(n, 0, namespace, "TermCursor") end
     end
 end
 
