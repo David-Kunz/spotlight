@@ -1,6 +1,8 @@
 local M = {}
 
-local namespace = vim.api.nvim_create_namespace("David-Kunz/sneak")
+local o = {hl_group = 'LspReferenceText'}
+
+local namespace = vim.api.nvim_create_namespace("David-Kunz/spotlight")
 M.run = function()
     vim.api.nvim_buf_clear_namespace(0, namespace, 0, -1)
     local ts_utils = require('nvim-treesitter.ts_utils')
@@ -11,8 +13,12 @@ M.run = function()
     if not def then return end
     local usages = locals.find_usages(def, scope, 0)
     for _, n in ipairs(usages) do
-      if n ~= node then ts_utils.highlight_node(n, 0, namespace, "TermCursor") end
+        if n ~= node then
+            ts_utils.highlight_node(n, 0, namespace, o.hl_group)
+        end
     end
 end
+
+M.setup = function(options) vim.tbl.extend('force', o, options) end
 
 return M
