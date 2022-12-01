@@ -35,17 +35,14 @@ options = {
 
 To automatically run it after the cursor was moved:
 
-- with a small delay:
-
-```lua
-vim.api.nvim_create_autocmd("CursorHold", {callback = require('spotlight').run})
-```
-
 - instantaneously:
-
 
 ```lua
 vim.api.nvim_create_autocmd("CursorMoved", {callback = require('spotlight').run})
 ```
 
+- with a small delay:
 
+```lua
+vim.api.nvim_create_autocmd("CursorHold", {callback = require('spotlight').run})
+```
