@@ -1,6 +1,6 @@
 local M = {}
 
-local o = {hl_group = 'LspReferenceText'}
+local o = {hl_group = 'LspReferenceText', highlight_at_cursor = false}
 
 local namespace = vim.api.nvim_create_namespace("David-Kunz/spotlight")
 M.run = function()
@@ -13,7 +13,7 @@ M.run = function()
     if not def then return end
     local usages = locals.find_usages(def, scope, 0)
     for _, n in ipairs(usages) do
-        if n ~= node then
+        if o.highlight_at_cursor or n ~= node then
             ts_utils.highlight_node(n, 0, namespace, o.hl_group)
         end
     end

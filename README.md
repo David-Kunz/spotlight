@@ -22,7 +22,7 @@ require('spotlight').run()
 require('spotlight').setup(options)
 ```
 
-with the following options (with defaults)
+with the following options (with defaults):
 
 ```lua
 options = {hl_group = 'LspReferenceText'}
