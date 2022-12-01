@@ -25,7 +25,10 @@ require('spotlight').setup(options)
 with the following options (with defaults):
 
 ```lua
-options = {hl_group = 'LspReferenceText'}
+options = {
+  hl_group = 'LspReferenceText', -- highlight group
+  highlight_at_cursor = true -- also highlight the word under the cursor
+}
 ```
 
 ## Tip

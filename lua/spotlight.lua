@@ -1,6 +1,6 @@
 local M = {}
 
-local o = {hl_group = 'LspReferenceText', highlight_at_cursor = false}
+local o = {hl_group = 'LspReferenceText', highlight_at_cursor = true}
 
 local namespace = vim.api.nvim_create_namespace("David-Kunz/spotlight")
 M.run = function()
