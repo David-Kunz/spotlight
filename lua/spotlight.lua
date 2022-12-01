@@ -19,6 +19,6 @@ M.run = function()
     end
 end
 
-M.setup = function(options) vim.tbl_extend('force', o, options) end
+M.setup = function(options) vim.tbl_deep_extend('force', o, options) end
 
 return M
